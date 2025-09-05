@@ -6,12 +6,13 @@ include_directories(include)
 
 set(SOURCES
 	src/main.cpp
+	src/input.cpp
 )
 
 add_executable(connect_four ${SOURCES})
 
-# find_package(Curses REQUIRED)
-# include_directories(${CURSES_INCLUDE_DIR})
-# target_link_libraries(connect_four ${CURSES_LIBRARIES})
+find_package(Curses REQUIRED)
+include_directories(${CURSES_INCLUDE_DIR})
+target_link_libraries(connect_four ${CURSES_LIBRARIES})
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
