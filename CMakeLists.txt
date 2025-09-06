@@ -7,6 +7,8 @@ include_directories(include)
 set(SOURCES
 	src/main.cpp
 	src/input.cpp
+	src/window.cpp
+	src/elements.cpp
 )
 
 add_executable(connect_four ${SOURCES})
