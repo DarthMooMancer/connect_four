@@ -1,6 +1,7 @@
 #include "elements.hpp"
 #include "globals.hpp"
 #include <vector>
+#include <iostream>
 
 void Point::assign(int row, int col) {
 	m_row = row;
@@ -13,13 +14,16 @@ void Point::move() {
 	}
 }
 
+void Point::to_string() {
+	std::cout << "(" << m_row << ", " << m_col << ")";
+}
+
 void Point::check_collision(std::vector<Point> &points_list) {;
 	for(int i = 0; i < points_list.size(); i++) {
 		if(points_list[i].m_id == m_id) continue;
 		if(points_list[i].m_row != m_row) continue;
 		if(points_list[i].m_col != m_col) continue;
 		m_row = points_list[i].m_row - 1;
-		m_active = false;
 	}
 }
 
