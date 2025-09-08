@@ -12,6 +12,8 @@ void Point::assign(int row, int col) {
 void Point::move() {
 	if(m_row < ROW - 1) {
 		m_row++;
+	} else {
+		m_collided = true;
 	}
 }
 
@@ -60,6 +62,21 @@ bool Player::check_chain(std::array<std::array<char, COL>, ROW> &m_board, std::v
 			if(m_board[i - 1][j + 1] != m_symbol) continue;
 			if(m_board[i - 2][j + 2] != m_symbol) continue;
 			if(m_board[i - 3][j + 3] != m_symbol) continue;
+			if(m_board[i][j + 1] == '.') continue;
+			if(m_board[i - 1][j + 2] == '.') continue;
+			if(m_board[i - 2][j + 3] == '.') continue;
+			return true;
+		}
+	}
+	for(int i = ROW - 1; i >= 0; i--) {
+		for(int j = COL - 1; j >= 0; j--) {
+			if(m_board[i][j] != m_symbol) continue;
+			if(m_board[i - 1][j - 1] != m_symbol) continue;
+			if(m_board[i - 2][j - 2] != m_symbol) continue;
+			if(m_board[i - 3][j - 3] != m_symbol) continue;
+			if(m_board[i][j - 1] == '.') continue;
+			if(m_board[i - 1][j - 2] == '.') continue;
+			if(m_board[i - 2][j - 3] == '.') continue;
 			return true;
 		}
 	}

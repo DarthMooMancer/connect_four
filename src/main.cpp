@@ -20,7 +20,7 @@ int main() {
 			points_list[i].move();
 			points_list[i].check_collision(points_list);
 		}
-		if(one.check_chain(window.m_board)) {
+		if(one.check_chain(window.m_board, points_list)) {
 			std::cout << "Hello" << std::endl;
 			running = false;
 		}
