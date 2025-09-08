@@ -21,7 +21,11 @@ int main() {
 			points_list[i].check_collision(points_list);
 		}
 		if(one.check_chain(window.m_board, points_list)) {
-			std::cout << "Hello" << std::endl;
+			std::cout << "Player 1 wins!" << std::endl;
+			running = false;
+		}
+		if(two.check_chain(window.m_board, points_list)) {
+			std::cout << "Player 2 wins!" << std::endl;
 			running = false;
 		}
 	}
