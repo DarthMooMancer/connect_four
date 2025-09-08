@@ -9,7 +9,6 @@
 struct Window {
 	std::array<std::array<char, COL>, ROW> m_board = {};
 	void update_display(std::vector<Point> &points_list);
-	bool check_chain();
 };
 
 #endif

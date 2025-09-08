@@ -2,7 +2,6 @@
 #include "globals.hpp"
 #include <array>
 #include <vector>
-#include <iostream>
 
 void Point::assign(int row, int col) {
 	m_row = row;
@@ -10,15 +9,8 @@ void Point::assign(int row, int col) {
 }
 
 void Point::move() {
-	if(m_row < ROW - 1) {
-		m_row++;
-	} else {
-		m_collided = true;
-	}
-}
-
-void Point::to_string() {
-	std::cout << "(" << m_row << ", " << m_col << ")";
+	if(m_row < ROW - 1) m_row++;
+	else m_collided = true;
 }
 
 void Point::check_collision(std::vector<Point> &points_list) {;

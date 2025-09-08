@@ -23,8 +23,7 @@ int main() {
 		if(one.check_chain(window.m_board, points_list)) {
 			std::cout << "Player 1 wins!" << std::endl;
 			running = false;
-		}
-		if(two.check_chain(window.m_board, points_list)) {
+		} else if(two.check_chain(window.m_board, points_list)) {
 			std::cout << "Player 2 wins!" << std::endl;
 			running = false;
 		}

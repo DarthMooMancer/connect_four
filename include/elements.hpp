@@ -12,7 +12,6 @@ struct Point {
 	int m_id;
 	char m_symbol;
 	bool m_collided;
-	void to_string();
 	void assign(int row, int col);
 	void move();
 	void check_collision(std::vector<Point> &points_list);
@@ -23,7 +22,6 @@ struct Player {
 	char m_symbol;
 	bool m_turn;
 	void input_tile(int col, std::vector<Point> &points);
-	// bool check_chain(std::array<std::array<char, COL>, ROW> &m_board);
 	bool check_chain(std::array<std::array<char, COL>, ROW> &m_board, std::vector<Point> &points_list);
 };
 
